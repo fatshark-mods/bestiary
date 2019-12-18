@@ -1,0 +1,17 @@
+mod = [
+	"Bestiary"
+]
+
+package = [
+	"resource_packages/Bestiary/Bestiary"
+]
+
+lua = [
+	"scripts/mods/Bestiary/*"
+
+	"materials/bestiary/bestiary_atlas"
+]
+
+material = [
+    "materials/bestiary/*"
+]
