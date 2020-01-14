@@ -5,7 +5,7 @@ local stop_animating = false
 
 
 mod:hook_safe(MenuWorldPreviewer, "on_enter", function (self)
-    self._camera_default_position = {
+    self._bestiary_camera_default_position = {
         z = 1,
         x = 0,
         y = 2.5
@@ -129,7 +129,7 @@ MenuWorldPreviewer.update_enemy = function (self, dt, t, input_disabled)
     --self:_update_camera_animation_data(self._camera_position_animation_data, dt)
     --self:_update_camera_animation_data(self._camera_rotation_animation_data, dt)
 
-    local camera_default_position = self._camera_default_position
+    local camera_default_position = self._bestiary_camera_default_position
     local camera_position_new = Vector3.zero()
     camera_position_new.x = camera_zoom_new * camera_default_position.x
     camera_position_new.y = camera_zoom_new * camera_default_position.y
