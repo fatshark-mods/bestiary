@@ -7,26 +7,29 @@ return {
     options = {
         widgets = {
             {
-                setting_id = "remember_customizations",
-                type = "checkbox",
-                default_value = false
-            },
-            {
                 setting_id = "open_bestiary_view",
                 type = "keybind",
                 default_value = {},
-                keybind_global = false,
+                keybind_type = "function_call",
                 keybind_trigger = "pressed",
-                keybind_type = "view_toggle",
-                view_name = "bestiary_view",
-                transition_data = {
-                    open_view_transition_name = "open_bestiary_view",
-
-                    close_view_transition_name = "close_bestiary_view",
-
-                    transition_fade = true
-                },
-            }
+                function_name = "open_bestiary_view"
+            },
+            --{
+            --    setting_id = "open_bestiary_view",
+            --    type = "keybind",
+            --    default_value = {},
+            --    keybind_global = false,
+            --    keybind_trigger = "pressed",
+            --    keybind_type = "view_toggle",
+            --    view_name = "bestiary_view",
+            --    transition_data = {
+            --        open_view_transition_name = "open_bestiary_view",
+            --
+            --        close_view_transition_name = "close_bestiary_view",
+            --
+            --        transition_fade = true
+            --    },
+            --}
         },
     },
 
