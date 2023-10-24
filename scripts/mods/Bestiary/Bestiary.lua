@@ -223,7 +223,7 @@ mod:hook_safe(DeathSystem, "kill_unit", function (self, unit, killing_blow)
             local attacker_unit = killing_blow[DamageDataIndex.ATTACKER]
             attacker_unit = AiUtils.get_actual_attacker_unit(attacker_unit)
 
-            if AiUtils.unit_alive(attacker_unit) then
+            if Unit.alive(attacker_unit) then
                 local breed = ( Unit.has_data(attacker_unit, "breed") == true and Unit.get_data(attacker_unit, "breed") ) or nil
 
                 if breed ~= nil then
@@ -244,7 +244,7 @@ mod:hook_safe(PlayerUnitHealthExtension, "knock_down", function (self, unit)
     if player_unit == unit then
         local attacker_unit = mod.attacker_unit
 
-        if AiUtils.unit_alive(attacker_unit) then
+        if Unit.alive(attacker_unit) then
             local breed = ( Unit.has_data(attacker_unit, "breed") == true and Unit.get_data(attacker_unit, "breed") ) or nil
 
             if breed ~= nil then
@@ -263,7 +263,7 @@ mod:hook_safe(StatisticsUtil, "register_kill", function (victim_unit, damage_dat
 
     local attacker_unit = AiUtils.get_actual_attacker_unit(damage_data[DamageDataIndex.ATTACKER])
 
-    if AiUtils.unit_alive(attacker_unit) and attacker_unit == player_unit then
+    if Unit.alive(attacker_unit) and attacker_unit == player_unit then
         local breed = (Unit.has_data(victim_unit, "breed") == true and Unit.get_data(victim_unit, "breed") ) or nil
 
         if breed ~= nil then
@@ -297,7 +297,7 @@ mod:hook_safe(StatisticsUtil, "register_damage", function (victim_unit, damage_d
     local attacker_unit = damage_data[DamageDataIndex.ATTACKER]
     attacker_unit = AiUtils.get_actual_attacker_unit(attacker_unit)
 
-    if AiUtils.unit_alive(attacker_unit) and victim_unit == player_unit then
+    if Unit.alive(attacker_unit) and victim_unit == player_unit then
         local status_extension = ScriptUnit.extension(player_unit, "status_system")
 
         if not status_extension:is_knocked_down() then
